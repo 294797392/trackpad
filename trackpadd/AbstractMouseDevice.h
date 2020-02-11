@@ -1,0 +1,30 @@
+#pragma once
+
+
+class AbstractAMDEventHandler
+{
+public:
+	virtual void MouseDeviceConnectedHandler() = 0;
+	virtual void MouseDeviceDisconnectedHandler() = 0;
+	virtual void MouseDevicePositionChangedHandler(int offsetX, int offsetY) = 0;
+};
+
+class AbstractMouseDevice
+{
+protected:
+	AbstractAMDEventHandler *handler = nullptr;
+
+public:
+	AbstractMouseDevice();
+	~AbstractMouseDevice();
+
+public:
+	virtual int Initialize() = 0;
+	virtual int Release() = 0;
+	virtual int Connect() = 0;
+	virtual int Disconnect() = 0;
+
+public:
+	void SetEventHandler(AbstractAMDEventHandler *handler);
+};
+
