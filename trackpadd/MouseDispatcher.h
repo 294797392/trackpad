@@ -6,6 +6,8 @@ class MouseDispatcher :public AbstractAMDEventHandler
 {
 private:
 	AbstractMouseDevice *mouseDev = nullptr;
+	int originalX = 0;
+	int originalY = 0;
 
 public:
 	MouseDispatcher();
@@ -18,6 +20,6 @@ public:
 
 	void MouseDeviceConnectedHandler();
 	void MouseDeviceDisconnectedHandler();
-	void MouseDevicePositionChangedHandler(int offsetX, int offsetY);
+	void MouseDeviceMessageReceivedHandler(std::string message);
 };
 

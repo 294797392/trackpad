@@ -36,6 +36,9 @@
     <ClCompile Include="MouseDeviceFactory.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MessageQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractMouseDevice.h">
@@ -63,6 +66,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MouseDevices.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageID.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

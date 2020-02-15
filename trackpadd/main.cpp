@@ -16,7 +16,6 @@ int main(int argc, char **argv)
 	log4cplus::PropertyConfigurator::doConfigure(LOG4CPLUS_TEXT("log4cplus.properties"));
 	Logger::Initialize();
 
-
 	MouseDispatcher *dispatcher = new MouseDispatcher();
 	dispatcher->Initialize();
 	dispatcher->Run();

@@ -1,12 +1,13 @@
 #pragma once
 
+#include <string>
 
 class AbstractAMDEventHandler
 {
 public:
 	virtual void MouseDeviceConnectedHandler() = 0;
 	virtual void MouseDeviceDisconnectedHandler() = 0;
-	virtual void MouseDevicePositionChangedHandler(int offsetX, int offsetY) = 0;
+	virtual void MouseDeviceMessageReceivedHandler(std::string message) = 0;
 };
 
 class AbstractMouseDevice

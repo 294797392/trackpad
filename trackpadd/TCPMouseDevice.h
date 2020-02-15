@@ -8,8 +8,9 @@
 class TCPMouseDevice : public AbstractMouseDevice
 {
 private:
-	SOCKET socketHandle = -1;
-	pthread_t acceptThread;
+	SOCKET svcfd = -1;
+	pthread_t receiveThread;
+	fd_set fds;
 
 public:
 	TCPMouseDevice();
@@ -21,8 +22,13 @@ public:
 	int Connect() override;
 	int Disconnect() override;
 
+private:
+	static void *ReceiveThreadProc(void *state);
 
 private:
-	static void *AcceptClientThreadProc(void *state);
+	bool ReadMessage(SOCKET socket, std::string &message);
+	bool WriteMessage(SOCKET socket, std::string &message);
+	SOCKET AcceptClient();
+	void CloseClient(SOCKET s);
 };
 
